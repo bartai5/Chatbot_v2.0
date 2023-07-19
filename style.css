@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+body{
+    background: #f3f3f3;
+}
+.icon{
+    position: absolute;
+    bottom: 10px;
+    width: 45px;
+    height: 45px;
+    color: #f3f3f3;
+    background: rgb(33, 33, 85);
+    right: 15px;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .6s;
+}
+.icon:hover{
+    background: rgb(49, 49, 124);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.icon i{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .5s;
+}
+.icon i.active{
+    opacity: 1;
+}
+.container{
+    display: none;
+    position: absolute;
+    width: 420px;
+    background: #fff;
+    bottom: 70px;
+    right: 20px;
+    transform: scale(.5);
+    opacity: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 10px;
+    transition: all 0.5s;
+}
+.container.active{
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+.container .header{
+    position: relative;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    background: rgba(235, 235, 235, 0.651);
+}
+.header i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.3em;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: .6s ease;
+    cursor: pointer;
+}
+.header i:hover{
+    background: #020b1d;
+    color: #fff;
+}
+.header .title{
+    font-size: 1.3em;
+    color: #011130;
+}
+.header .status{
+    font-size: 1.2em;
+    display: inline;
+}
+.header .status span{
+    font-style: italic;
+}
+.body-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+.body-container p{
+    color: #4e4e4e;
+    padding-bottom: 10px;
+}
+.body-container .cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+.body-container .cont span{
+    font-style: italic;
+    color: #313131;
+    letter-spacing: 1.2px;
+}
+.body-container .cont input{
+    padding: 1px 5px;
+    color: #202020;
+}
+.body-container hr{
+    width: 100%;
+    margin-top: 40px;
+}
+.body-container .start-buttons{
+    padding: 10px;
+}
+.start-buttons button{
+    padding: 2px;
+    background: #1045af;
+    color: #f3f3f3;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .6s;
+}
+.start-buttons button:hover{
+    background: #2461db;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
