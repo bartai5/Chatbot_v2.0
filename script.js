@@ -17,6 +17,8 @@ function openChatConvo(){
         openChat.classList.add("active");
         closeChat.classList.remove("active");
         container.classList.remove("active");
+        resetElements();
+        bodyContainer.style.height = "auto";
     }
 }
 iconDiv.addEventListener("click", openChatConvo);
@@ -26,6 +28,8 @@ function exitChat(){
     openChat.classList.add("active");
     closeChat.classList.remove("active");
     container.classList.remove("active");
+    resetElements();
+    bodyContainer.style.height = "auto";
 }
 closeBtn.addEventListener("click", exitChat);
 
@@ -35,3 +39,23 @@ function clearElements(){
     bodyContainer.style.height = "460px";
 }
 startButton.addEventListener("click", clearElements);
+
+function resetElements() {
+    bodyContainer.innerHTML = `
+      <p>Share Your Queries Here And We Will Get Back To You As Soon As Possible...</p>
+      <div class="user_name cont">
+        <span>Full Name</span>
+        <input type="text" class="full-name" placeholder="e.g. John Doe">
+      </div>
+      <div class="user_email cont">
+        <span>Email Address</span>
+        <input type="text" class="email-add" placeholder="e.g. johndoe123@gmail.com">
+      </div>
+      <hr>
+      <div class="start-buttons cont">
+        <button type="button" id="start_convo">Start Conversation</button>
+      </div>
+    `;
+  }
+
+let count = document.querySelector("#count");
