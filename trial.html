@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Button Opacity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #input-container {
+      text-align: center;
+    }
+
+    textarea {
+      width: 300px;
+      height: 150px;
+      resize: none;
+      padding: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      opacity: 0.3;
+      cursor: pointer;
+    }
+
+    button.enabled {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="input-container">
+    <textarea id="input-textarea" placeholder="Type your message here"></textarea>
+    <button id="send-btn" disabled>Send</button>
+  </div>
+
+  <script>
+    const textarea = document.getElementById('input-textarea');
+    const sendBtn = document.getElementById('send-btn');
+
+    textarea.addEventListener('input', function() {
+      if (textarea.value.trim().length > 0) {
+        sendBtn.classList.add('enabled');
+        sendBtn.removeAttribute('disabled');
+      } else {
+        sendBtn.classList.remove('enabled');
+        sendBtn.setAttribute('disabled', true);
+      }
+    });
+  </script>
+</body>
+</html>

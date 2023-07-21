@@ -59,42 +59,16 @@ function resetElements() {
     `;
   }
 
-let count = document.querySelector("#count");
+//================================================================
+const textarea = document.getElementById('input-textarea');
+const sendBtn = document.getElementById('send-btn');
 
-
-// // Function to check if the textarea contains text is it does not the send button is set to opacity of .3s
-// let sendMsg = document.querySelector(".send-btn");
-// let userInput = document.querySelector("#user-input");
-
-// function checkText(){
-//   if(userInput.value.trim().length > 0){
-//     sendMsg.classList.add("contain-text");
-//   }
-//   else{
-//     sendMsg.classList.remove("contain-text");
-//   }
-// }
-
-//################################################
-var hasTyped = false;
-
-function checkTextArea() {
-  var textArea = document.getElementById("textArea");
-  var sendButton = document.getElementById("sendButton");
-
-  // Check if the textarea contains text and if it has not been typed before
-  if (textArea.value.trim().length > 0 && !hasTyped) {
-    sendButton.style.opacity = "1"; // Set the button opacity to 1 (fully opaque)
-    hasTyped = true; // Set the hasTyped flag to true, so we don't change the opacity again
-  } else if (textArea.value.trim().length === 0) {
-    sendButton.style.opacity = "0.3"; // Set the button opacity to 0.3 (partially transparent)
-    hasTyped = false; // Reset the hasTyped flag if the textarea is empty again
+textarea.addEventListener('input', function() {
+  if (textarea.value.trim().length > 0) {
+    sendBtn.classList.add('enabled');
+    sendBtn.removeAttribute('disabled');
+  } else {
+    sendBtn.classList.remove('enabled');
+    sendBtn.setAttribute('disabled', true);
   }
-}
-
-function sendData() {
-  // Your logic for sending data goes here
-  // This function will be called when the Send button is clicked
-  // For this example, we will just log a message to the console
-  console.log("Data sent!");
-}
+});
