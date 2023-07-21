@@ -61,14 +61,12 @@ function resetElements() {
 
 //================================================================
 const textarea = document.getElementById('input-textarea');
-const sendBtn = document.getElementById('send-btn');
+let sendI = document.querySelector("#send-msg");
 
 textarea.addEventListener('input', function() {
   if (textarea.value.trim().length > 0) {
-    sendBtn.classList.add('enabled');
-    sendBtn.removeAttribute('disabled');
+      sendI.classList.add("active");
   } else {
-    sendBtn.classList.remove('enabled');
-    sendBtn.setAttribute('disabled', true);
+      sendI.classList.remove("active");
   }
 });
