@@ -42,31 +42,19 @@ function clearElements(){
 startButton.addEventListener("click", clearElements);
 
 function resetElements() {
-    bodyContainer.innerHTML = `
-      <p>Share Your Queries Here And We Will Get Back To You As Soon As Possible...</p>
-      <div class="user_name cont">
-        <span>Full Name</span>
-        <input type="text" class="full-name" placeholder="e.g. John Doe">
-      </div>
-      <div class="user_email cont">
-        <span>Email Address</span>
-        <input type="text" class="email-add" placeholder="e.g. johndoe123@gmail.com">
-      </div>
-      <hr>
-      <div class="start-buttons cont">
-        <button type="button" id="start_convo">Start Conversation</button>
-      </div>
-    `;
-  }
-
-//================================================================
-const textarea = document.getElementById('input-textarea');
-let sendI = document.querySelector("#send-msg");
-
-textarea.addEventListener('input', function() {
-  if (textarea.value.trim().length > 0) {
-      sendI.classList.add("active");
-  } else {
-      sendI.classList.remove("active");
-  }
-});
+  bodyContainer.innerHTML = `
+    <p>Share Your Queries Here And We Will Get Back To You As Soon As Possible...</p>
+    <div class="user_name cont">
+      <span>Full Name</span>
+      <input type="text" class="full-name" placeholder="e.g. John Doe">
+    </div>
+    <div class="user_email cont">
+      <span>Email Address</span>
+      <input type="text" class="email-add" placeholder="e.g. johndoe123@gmail.com">
+    </div>
+    <hr>
+    <div class="start-buttons cont">
+      <button type="button" id="start_convo">Start Conversation</button>
+    </div>
+  `;
+}

@@ -192,26 +192,28 @@ body{
 /* User Chat Input Area */
 #input-container {
     display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
     padding: 5px;
+    position: relative;
 }
-#horizontal{
-    margin-bottom: 4px;
-}
-#input-container i{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-size: 2em;
-    opacity: 0.3;
-}
-#input-container i.active{
-    opacity: 1;
-    color: #007bff;
-}
-
-textarea {
-    width: 90%;
+  
+  #input-textarea {
+    width: 100%;
     resize: none;
     padding: 5px;
     color: #4e4e4e;
+  }
+  
+.bx-send{
+    font-size: 2em;
+    opacity: 0.4;
+    margin-left: 10px;
+    cursor: not-allowed;
 }
+.bx-send.active{
+    color: #007bff;
+    cursor: pointer;
+    opacity: 1;
+}
+  
