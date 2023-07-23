@@ -35,11 +35,11 @@ closeBtn.addEventListener("click", exitChat);
 
 
 // This function Clears all the elements of the body container
-function clearElements(){
-    bodyContainer.innerHTML = "";
-    bodyContainer.style.height = "460px";
-}
-startButton.addEventListener("click", clearElements);
+// function clearElements(){
+//     bodyContainer.innerHTML = "";
+//     bodyContainer.style.height = "460px";
+// }
+// startButton.addEventListener("click", clearElements);
 
 function resetElements() {
   bodyContainer.innerHTML = `
@@ -58,3 +58,6 @@ function resetElements() {
     </div>
   `;
 }
+
+
+// Trial to send and receive message from the text area and display in the chat screen
