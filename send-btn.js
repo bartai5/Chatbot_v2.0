@@ -31,7 +31,7 @@ function sendMessage(){
   if(numValue % 2 != 0){
     screenChat.innerHTML += `
       <div class="receive-chat">
-        ${userMessage}
+        <pre class="message">${userMessage}</pre>
         <p class="receive-name">Japheth</p>
       </div>
     `
@@ -39,13 +39,14 @@ function sendMessage(){
   else{
     screenChat.innerHTML += `
     <div class="send-chat">
-    ${userMessage}
+      <pre class="message">${userMessage}</pre>
       <p class="send-name">You</p>
     </div>
     `
   }
-  userText.value = "";
   numValue += 1;
   scrollToBottom();
+  userText.value = "";
+  checkUserInput()
 }
 sendMsgBtn.addEventListener("click", sendMessage);
