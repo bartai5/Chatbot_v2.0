@@ -32,27 +32,24 @@ closeBtn.addEventListener("click", exitChat);
 
 
 // This function Clears all the elements of the body container
+// Get the users full name
+const names = document.querySelector(".full-name");
+let screenChat1 = document.querySelector(".chat-screen");
 let chatContainer = document.querySelector(".chat-container");
+
 function startConversation(){
+  let userFullName = names.value;
+  let fullName = userFullName.split(" ");
+  let userName = fullName[0];
+
+  screenChat1.innerHTML += `
+    <div class="receive-chat">
+    <pre class="message">Hello ${userName}, Welcome to AlphaMax Software International. 
+How may I help you?</pre>
+      <p class="receive-name">Japheth</p>
+    </div>
+`;
   bodyContainer.classList.add("active")
   chatContainer.classList.remove("active");
 }
 startButton.addEventListener("click", startConversation);
-
-function resetElements() {
-  bodyContainer.innerHTML = `
-    <p>Share Your Queries Here And We Will Get Back To You As Soon As Possible...</p>
-    <div class="user_name cont">
-      <span>Full Name</span>
-      <input type="text" class="full-name" placeholder="e.g. John Doe">
-    </div>
-    <div class="user_email cont">
-      <span>Email Address</span>
-      <input type="text" class="email-add" placeholder="e.g. johndoe123@gmail.com">
-    </div>
-    <hr>
-    <div class="start-buttons cont">
-      <button type="button" id="start_convo">Start Conversation</button>
-    </div>
-  `;
-}
