@@ -7,6 +7,7 @@ let openChat = document.querySelector("#open-chat");
 let closeChat = document.querySelector("#close-chat");
 let iconDiv = document.querySelector(".icon");
 
+// Function to open and close the chat screen using the exit and the toggle open button
 function openChatConvo(){
     if(openChat.classList.contains("active")){
         closeChat.classList.add("active");
@@ -17,8 +18,6 @@ function openChatConvo(){
         openChat.classList.add("active");
         closeChat.classList.remove("active");
         container.classList.remove("active");
-        resetElements();
-        bodyContainer.style.height = "auto";
     }
 }
 iconDiv.addEventListener("click", openChatConvo);
@@ -28,18 +27,17 @@ function exitChat(){
     openChat.classList.add("active");
     closeChat.classList.remove("active");
     container.classList.remove("active");
-    resetElements();
-    bodyContainer.style.height = "auto";
 }
 closeBtn.addEventListener("click", exitChat);
 
 
 // This function Clears all the elements of the body container
-// function clearElements(){
-//     bodyContainer.innerHTML = "";
-//     bodyContainer.style.height = "460px";
-// }
-// startButton.addEventListener("click", clearElements);
+let chatContainer = document.querySelector(".chat-container");
+function startConversation(){
+  bodyContainer.classList.add("active")
+  chatContainer.classList.remove("active");
+}
+startButton.addEventListener("click", startConversation);
 
 function resetElements() {
   bodyContainer.innerHTML = `
@@ -58,6 +56,3 @@ function resetElements() {
     </div>
   `;
 }
-
-
-// Trial to send and receive message from the text area and display in the chat screen

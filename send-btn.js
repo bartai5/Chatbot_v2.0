@@ -28,25 +28,28 @@ function scrollToBottom() {
 let numValue = 0;
 function sendMessage(){
   let userMessage = userText.value;
-  if(numValue % 2 != 0){
-    screenChat.innerHTML += `
-      <div class="receive-chat">
+  if (userMessage !== ""){
+    if(numValue % 2 != 0){
+      screenChat.innerHTML += `
+        <div class="receive-chat">
+          <pre class="message">${userMessage}</pre>
+          <p class="receive-name">Japheth</p>
+        </div>
+      `
+    }
+    else{
+      screenChat.innerHTML += `
+      <div class="send-chat">
         <pre class="message">${userMessage}</pre>
-        <p class="receive-name">Japheth</p>
+        <p class="send-name">You</p>
       </div>
-    `
+      `
+    }
+    numValue += 1;
+    scrollToBottom();
+    userText.value = "";
+    checkUserInput()
   }
-  else{
-    screenChat.innerHTML += `
-    <div class="send-chat">
-      <pre class="message">${userMessage}</pre>
-      <p class="send-name">You</p>
-    </div>
-    `
-  }
-  numValue += 1;
-  scrollToBottom();
-  userText.value = "";
-  checkUserInput()
+  
 }
 sendMsgBtn.addEventListener("click", sendMessage);
